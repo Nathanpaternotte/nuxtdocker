@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <div>Salut gros sac<NuxtWelcome /></div>
 </template>
