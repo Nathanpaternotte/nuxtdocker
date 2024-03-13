@@ -9,10 +9,12 @@ services:
       - "3000:3000"
     labels:
       - "traefik.enable=true"
+      - "traefik.docker.network=web"
       - "traefik.http.routers.app.rule=Host(`test.agence-am.be`)"
-      - "traefik.http.routers.app.entrypoints=https"
-      - "traefik.http.routers.app.tls=true"
+      - "traefik.http.routers.app.entrypoints=websecure"
       - "traefik.http.routers.app.tls.certresolver=myresolver"
+      - "traefik.tcp.routers.app.tls.passthrough=true"
+      - "traefik.http.services.app.loadbalancer.server.port=3000"
     networks:
       - web
 
