@@ -7,3 +7,15 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`test.agence-am.be`)"
+      - "traefik.http.routers.app.entrypoints=https"
+      - "traefik.http.routers.app.tls=true"
+      - "traefik.http.routers.app.tls.certresolver=myresolver"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
