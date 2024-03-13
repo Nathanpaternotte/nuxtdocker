@@ -12,6 +12,7 @@ COPY . .
 RUN npm install
 
 # Construire l'application
+RUN ls -al
 RUN npm run build
 
 # Exposer le port sur lequel l'application fonctionne
