@@ -1,3 +1,3 @@
 <template>
-  <div>Salut gros sac<NuxtWelcome /></div>
+  <div><NuxtWelcome /></div>
 </template>
